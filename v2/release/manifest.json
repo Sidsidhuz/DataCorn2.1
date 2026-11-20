@@ -1,0 +1,27 @@
+{
+  "version": "2.1.0",
+  "date": "2026-11-15",
+  "status": "local_product_candidate",
+  "python": "3.13",
+  "platform": "Windows",
+  "tests": {
+    "passed": 45,
+    "command": "python -m pytest v2/tests -q"
+  },
+  "dependency_audit": {
+    "audited": 53,
+    "skipped": 0,
+    "known_vulnerabilities": 0
+  },
+  "lock_sha256_lf": "82dc29dfeb03bd96f27fc599dc815c51900c2f2e72bd691416d261de54e535f1",
+  "checks": {
+    "dependency_consistency": "passed",
+    "local_readiness": "passed",
+    "desktop_browser": "passed",
+    "mobile_browser": "basic_navigation_and_forms_passed_390px",
+    "docker_build": "unverified_daemon_unavailable",
+    "remote_ci": "not_run",
+    "public_deployment": "not_published"
+  },
+  "ollama": "deferred"
+}

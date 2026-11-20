@@ -1,0 +1,37 @@
+name: AutoInsight v2 evidence checks
+on:
+  push:
+    branches: [autoinsight-2-evidence-mvp, product-foundation]
+  pull_request:
+    paths: ['v2/**', 'app/modules/feature_engineering/**', '.github/workflows/autoinsight-v2.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: v2/requirements.lock
+      - run: pip install -r v2/requirements-dev.txt
+      - run: python -m pytest v2/tests -q
+      - run: python -m pip_audit -r v2/requirements.lock
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -f v2/Dockerfile -t autoinsight:ci .
+      - run: |
+          docker run -d --name autoinsight -p 8501:8501 autoinsight:ci
+          for attempt in $(seq 1 30); do
+            if curl --fail http://localhost:8501/_stcore/health && docker exec autoinsight python -m v2.health; then
+              test "$(docker exec autoinsight id -u)" = "10001"
+              exit 0
+            fi
+            sleep 2
+          done
+          docker logs autoinsight
+          exit 1

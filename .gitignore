@@ -1,0 +1,58 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# --- Virtual environment ---
+venv/
+.venv/
+env/
+
+# --- Environment / secrets ---
+.env
+
+# --- Database ---
+*.db
+*.sqlite3
+
+# --- CatBoost training artifacts ---
+catboost_info/
+
+# --- Runtime data (keep folder structure, ignore generated content) ---
+data/raw/*
+data/cleaned/*
+data/models/*
+data/reports/*
+data/plots/*
+!data/raw/.gitkeep
+!data/cleaned/.gitkeep
+!data/models/.gitkeep
+!data/reports/.gitkeep
+!data/plots/.gitkeep
+
+# --- Testing / coverage ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- IDE ---
+.vscode/
+.idea/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# AutoInsight v2 local-only state
+.venv-v2/
+v2/demo_output/
+v2/.streamlit/secrets.toml
+.streamlit/secrets.toml
+.autoinsight/
+v2/.autoinsight/
+*.sqlite3-wal
+*.sqlite3-shm
+*.skops
+

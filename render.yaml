@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: autoinsight-evidence-studio
+    runtime: docker
+    dockerfilePath: ./v2/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /_stcore/health
+    envVars:
+      - key: AUTOINSIGHT_MODE
+        value: demo
+      - key: AUTOINSIGHT_DATA_DIR
+        value: /data

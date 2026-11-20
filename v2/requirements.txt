@@ -1,0 +1,2 @@
+# Reproducible production installation. Update requirements.in, then regenerate and test the lock.
+-r requirements.lock

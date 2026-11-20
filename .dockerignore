@@ -1,0 +1,14 @@
+.git
+.env
+.env.*
+**/secrets.toml
+.autoinsight
+**/__pycache__
+**/.pytest_cache
+**/*.pyc
+.venv*
+venv
+v2/demo_output
+v2/tests
+data
+docs/screenshots

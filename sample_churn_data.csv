@@ -1,0 +1,21 @@
+customer_id,age,tenure_months,monthly_charges,total_charges,contract_type,churn
+1001,34,12,50.5,606.0,Month-to-month,Yes
+1002,45,24,65.0,1560.0,One year,No
+1003,23,5,40.0,200.0,Month-to-month,Yes
+1004,50,48,80.5,3864.0,Two year,No
+1005,29,2,30.0,60.0,Month-to-month,Yes
+1006,60,60,95.0,5700.0,Two year,No
+1007,38,15,55.0,825.0,Month-to-month,No
+1008,42,8,70.0,560.0,Month-to-month,Yes
+1009,21,1,25.0,25.0,Month-to-month,Yes
+1010,55,36,85.0,3060.0,One year,No
+1011,31,10,45.0,450.0,Month-to-month,No
+1012,48,50,90.0,4500.0,Two year,No
+1013,26,4,35.0,140.0,Month-to-month,Yes
+1014,62,72,105.0,7560.0,Two year,No
+1015,35,18,60.0,1080.0,One year,No
+1016,40,6,75.0,450.0,Month-to-month,Yes
+1017,28,3,32.0,96.0,Month-to-month,Yes
+1018,52,42,82.0,3444.0,One year,No
+1019,33,14,52.0,728.0,Month-to-month,No
+1020,46,20,68.0,1360.0,One year,No
